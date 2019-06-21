@@ -1,8 +1,6 @@
 ﻿  Building 'MyDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
   DriverEntry.c
-C:\Users\Administrator\source\repos\KMDF Driver1\KMDF Driver1\DriverEntry.c(6,3): error C2143:  语法错误: 缺少“;”(在“字符串”的前面)
-C:\Users\Administrator\source\repos\KMDF Driver1\KMDF Driver1\DriverEntry.c(6,3): warning C4550:  表达式计算为缺少参数列表的函数
-C:\Users\Administrator\source\repos\KMDF Driver1\KMDF Driver1\DriverEntry.c(30,3): error C2143:  语法错误: 缺少“;”(在“字符串”的前面)
-C:\Users\Administrator\source\repos\KMDF Driver1\KMDF Driver1\DriverEntry.c(30,3): warning C4550:  表达式计算为缺少参数列表的函数
-C:\Users\Administrator\source\repos\KMDF Driver1\KMDF Driver1\DriverEntry.c(34,3): error C2143:  语法错误: 缺少“;”(在“字符串”的前面)
-C:\Users\Administrator\source\repos\KMDF Driver1\KMDF Driver1\DriverEntry.c(34,3): warning C4550:  表达式计算为缺少参数列表的函数
+  KMDF Driver1.vcxproj -> C:\Users\Administrator\source\repos\KMDF-Driver1\x64\Debug\MyDriver.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\Administrator\source\repos\KMDF-Driver1\x64\Debug\MyDriver.sys
+  

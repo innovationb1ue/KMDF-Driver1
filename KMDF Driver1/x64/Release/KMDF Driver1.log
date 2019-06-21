@@ -1,6 +1,5 @@
 ﻿  Building 'MyDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
   DriverEntry.c
-  KMDF Driver1.vcxproj -> C:\Users\Administrator\source\repos\KMDF Driver1\x64\Release\MyDriver.sys
-  Done Adding Additional Store
-  Successfully signed: C:\Users\Administrator\source\repos\KMDF Driver1\x64\Release\MyDriver.sys
-  
+C:\Users\Administrator\source\repos\KMDF-Driver1\KMDF Driver1\DriverEntry.c(28,53): error C4028:  形参 1 与声明不同
+C:\Users\Administrator\source\repos\KMDF-Driver1\KMDF Driver1\DriverEntry.c(29,52): error C4028:  形参 1 与声明不同
+C:\Users\Administrator\source\repos\KMDF-Driver1\KMDF Driver1\DriverEntry.c(30,61): error C4028:  形参 1 与声明不同

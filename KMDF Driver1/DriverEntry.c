@@ -1,18 +1,7 @@
 #include <ntddk.h>
 NTSTATUS CreateDevice(PDRIVER_OBJECT driver);
-// 卸载事件
-void DriverUnload(PDRIVER_OBJECT pDriver) 
-{
-	
-
-	if (pDriver->DeviceObject) {
-
-		IoDeleteDevice(pDriver->DeviceObject);
-		DbgPrint("Unload删除了对象");
-	}
-	
-
-};
+NTSTATUS DeviceIrpCtr(PDEVICE_OBJECT driver, PIRP pirp);
+void DriverUnload(PDRIVER_OBJECT pDriver);
 // 驱动入口
 NTSTATUS DriverEntry(PDRIVER_OBJECT Driver, PUNICODE_STRING szReg)
 {
@@ -32,6 +21,20 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT Driver, PUNICODE_STRING szReg)
 	return STATUS_SUCCESS;
 };
 
+// 卸载事件
+void DriverUnload(PDRIVER_OBJECT pDriver)
+{
+
+
+	if (pDriver->DeviceObject) {
+
+		IoDeleteDevice(pDriver->DeviceObject);
+		DbgPrint("Unload删除了对象");
+	}
+
+
+};
+
 // 创建设备对象
 NTSTATUS CreateDevice (PDRIVER_OBJECT driver)
 {
@@ -45,6 +48,18 @@ NTSTATUS CreateDevice (PDRIVER_OBJECT driver)
 	if (status == STATUS_SUCCESS) 
 	{ 
 		DbgPrint(("yjx:设备对象创建成功\n"));
+		// 创建符号链接
+		UNICODE_STRING uzSymbolName;
+		RtlInitUnicodeString(&uzSymbolName, L"\\??\\MyDriver"); // CreateFile
+		status = IoCreateSymbolicLink(&uzSymbolName, &MyDriver); // DeviceName to SymbolicLinkName
+		if (status == STATUS_SUCCESS)
+		{
+			DbgPrint(("yjx:创建符号链接成功"));
+		}
+		else
+		{
+			DbgPrint(("yjx:创建符号连接失败"));
+		}
 	}
 	else 
 	{
@@ -54,8 +69,9 @@ NTSTATUS CreateDevice (PDRIVER_OBJECT driver)
 	}
 	return status;
 }
+
 // IRP处理函数
-NTSTATUS DeviceIrpCtr(PDRIVER_OBJECT driver, PIRP pirp) {
+NTSTATUS DeviceIrpCtr(PDEVICE_OBJECT device, PIRP pirp) {
 	DbgPrint(("进入派遣函数"));
 	PIO_STACK_LOCATION irpStackL;
 	ULONG CtlCode;
@@ -72,17 +88,22 @@ NTSTATUS DeviceIrpCtr(PDRIVER_OBJECT driver, PIRP pirp) {
 	}
 	case IRP_MJ_CREATE:
 	{
-		DbgPrint(("yjx: 用户层IRP_MJ_CREATE"));
+		DbgPrint(("yjx: 用户层CreateFIle"));
 		break;
 	}case IRP_MJ_CLOSE:
 	{
-		DbgPrint(("yjx: 用户层IRP_MJ_CLOSE"));
+		DbgPrint(("yjx: 用户层CloseHandle"));
 		break;
 	}
 	default:
 		DbgPrint(("IRP Default 错误"));
 		break;
 	}
+	pirp->IoStatus.Status = STATUS_SUCCESS;
+	pirp->IoStatus.Information = 4;
+	IoCompleteRequest(pirp, IO_NO_INCREMENT);
+	DbgPrint(("离开派遣函数"));
+	return STATUS_SUCCESS;
 
 	
 	return 0;

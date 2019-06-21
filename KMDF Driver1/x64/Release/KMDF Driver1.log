@@ -1,0 +1,6 @@
+﻿  Building 'MyDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  DriverEntry.c
+  KMDF Driver1.vcxproj -> C:\Users\Administrator\source\repos\KMDF Driver1\x64\Release\MyDriver.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\Administrator\source\repos\KMDF Driver1\x64\Release\MyDriver.sys
+  

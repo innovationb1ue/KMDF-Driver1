@@ -1,0 +1,1 @@
+void DbgPrintfA(char*pszFormat,...);

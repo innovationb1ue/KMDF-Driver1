@@ -162,6 +162,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DriverEntry.c" />
+    <ClCompile Include="监控进程Ex.c" />
+    <ClCompile Include="监控进程.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="监控进程Ex.h" />
+    <ClInclude Include="监控进程.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

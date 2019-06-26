@@ -1,12 +1,20 @@
 #include <ntddk.h>
+#include "监控进程.h"
+#include "监控进程Ex.h"
+
+
+
 NTSTATUS CreateDevice(PDRIVER_OBJECT driver);
 NTSTATUS DeviceIrpCtr(PDEVICE_OBJECT driver, PIRP pirp);
 void DriverUnload(PDRIVER_OBJECT pDriver);
+#pragma code_seg("PAGE")
+
+
 // 驱动入口
 NTSTATUS DriverEntry(PDRIVER_OBJECT Driver, PUNICODE_STRING szReg)
 {
 	DbgPrint(("yjx:DbgPrint 我的第一个驱动"));
-	KdPrint(("yjx:KdPrint 我的第一个驱动"));
+	KdPrint(("yjx:KdPrint 我的第一个驱动")); 
 	//设置卸载程序DriverUnload
 	Driver->DriverUnload = DriverUnload;
 	// 创建驱动设备对象
@@ -16,11 +24,12 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT Driver, PUNICODE_STRING szReg)
 	Driver->MajorFunction[IRP_MJ_CREATE] = DeviceIrpCtr;// CreateFile
 	Driver->MajorFunction[IRP_MJ_CLOSE] = DeviceIrpCtr; // Unload
 	Driver->MajorFunction[IRP_MJ_DEVICE_CONTROL] = DeviceIrpCtr; // DeviceIO Control
-
 	if (status == STATUS_SUCCESS) { DbgPrint(("CreateDevice 成功")); }
+
+	// 监控
+	Hook监控进程Ex();
 	return STATUS_SUCCESS;
 };
-
 // 卸载事件
 void DriverUnload(PDRIVER_OBJECT pDriver)
 {
@@ -28,11 +37,16 @@ void DriverUnload(PDRIVER_OBJECT pDriver)
 
 	if (pDriver->DeviceObject) {
 
+		// 删除设备对象
 		IoDeleteDevice(pDriver->DeviceObject);
+		// 删除符号链接
+		UNICODE_STRING uzSymbolName;
+		RtlInitUnicodeString(&uzSymbolName, L"\\??\\MyDriver1");
+		IoDeleteSymbolicLink(&uzSymbolName);
 		DbgPrint("Unload删除了对象");
 	}
-
-
+	// 监控
+	unHook监控进程Ex();
 };
 
 // 创建设备对象
@@ -41,7 +55,7 @@ NTSTATUS CreateDevice (PDRIVER_OBJECT driver)
 	NTSTATUS status;
 	UNICODE_STRING MyDriver;
 	PDEVICE_OBJECT device;
-	RtlInitUnicodeString(&MyDriver, L"\\DEVICE\\MyDriver111");// MyDriver 初始化
+	RtlInitUnicodeString(&MyDriver, L"\\DEVICE\\MyDriver1");// MyDriver 初始化
 	// IoCreateDevice创建对象
 	status = IoCreateDevice(driver, sizeof(driver->DriverExtension), &MyDriver, FILE_DEVICE_UNKNOWN, FILE_DEVICE_SECURE_OPEN, FALSE, &device);
 	
@@ -50,7 +64,7 @@ NTSTATUS CreateDevice (PDRIVER_OBJECT driver)
 		DbgPrint(("yjx:设备对象创建成功\n"));
 		// 创建符号链接
 		UNICODE_STRING uzSymbolName;
-		RtlInitUnicodeString(&uzSymbolName, L"\\??\\MyDriver"); // CreateFile
+		RtlInitUnicodeString(&uzSymbolName, L"\\??\\MyDriver1"); // CreateFile
 		status = IoCreateSymbolicLink(&uzSymbolName, &MyDriver); // DeviceName to SymbolicLinkName
 		if (status == STATUS_SUCCESS)
 		{
@@ -84,6 +98,18 @@ NTSTATUS DeviceIrpCtr(PDEVICE_OBJECT device, PIRP pirp) {
 	case IRP_MJ_DEVICE_CONTROL:
 	{
 		DbgPrint(("yjx: 用户层DeviceIoControl"));
+		// 获取传入参数
+		unsigned int* pInBuf = pirp->AssociatedIrp.SystemBuffer;
+		DbgPrint("IoControl 传入参数: %x,%x,%x,%x,%x,%x", pInBuf[0], pInBuf[1], pInBuf[2], pInBuf[3], pInBuf[4], pInBuf[5]);
+		// 返回参数到应用层 
+		pInBuf[0] = 0x111abc;
+		pInBuf[1] = 0x222abc;
+		pInBuf[2] = 0x333abc;
+		pInBuf[3] = 0x444abc;
+		pInBuf[4] = 0x555abc;
+		pInBuf[5] = 0x666abc;
+		pirp->IoStatus.Information = 4*6;
+		
 		break;
 	}
 	case IRP_MJ_CREATE:
@@ -99,13 +125,10 @@ NTSTATUS DeviceIrpCtr(PDEVICE_OBJECT device, PIRP pirp) {
 		DbgPrint(("IRP Default 错误"));
 		break;
 	}
-	pirp->IoStatus.Status = STATUS_SUCCESS;
-	pirp->IoStatus.Information = 4;
+	pirp->IoStatus.Status = STATUS_SUCCESS; 
+	//pirp->IoStatus.Information = 4;
 	IoCompleteRequest(pirp, IO_NO_INCREMENT);
 	DbgPrint(("离开派遣函数"));
 	return STATUS_SUCCESS;
-
-	
-	return 0;
 
 }

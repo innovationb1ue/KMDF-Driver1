@@ -17,10 +17,30 @@
       <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
       <Extensions>inf;inv;inx;mof;mc;</Extensions>
     </Filter>
+    <Filter Include="监控进程">
+      <UniqueIdentifier>{db77d8fa-ec61-4542-8947-127648a7a5de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="监控进程Ex">
+      <UniqueIdentifier>{62cda036-90f0-41a3-b863-d0f9e3009071}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DriverEntry.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="监控进程.c">
+      <Filter>监控进程</Filter>
+    </ClCompile>
+    <ClCompile Include="监控进程Ex.c">
+      <Filter>监控进程Ex</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="监控进程.h">
+      <Filter>监控进程</Filter>
+    </ClInclude>
+    <ClInclude Include="监控进程Ex.h">
+      <Filter>监控进程Ex</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

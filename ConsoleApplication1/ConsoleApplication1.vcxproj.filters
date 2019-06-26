@@ -13,10 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="调试信息">
+      <UniqueIdentifier>{f1873b84-d345-4a29-887a-0c567b3f3a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="加载卸载驱动">
+      <UniqueIdentifier>{e4bb87af-3832-4f96-9d9d-24a415da5381}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DebugPrint.cpp">
+      <Filter>调试信息</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DebugPrint.h">
+      <Filter>调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadDriver.h">
+      <Filter>加载卸载驱动</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

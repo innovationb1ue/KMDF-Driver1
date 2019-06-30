@@ -1,7 +1,7 @@
 #include <ntddk.h>
 #include "监控进程.h"
 #include "监控进程Ex.h"
-
+#include "进程内存保护.h"
 
 
 NTSTATUS CreateDevice(PDRIVER_OBJECT driver);
@@ -26,8 +26,13 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT Driver, PUNICODE_STRING szReg)
 	Driver->MajorFunction[IRP_MJ_DEVICE_CONTROL] = DeviceIrpCtr; // DeviceIO Control
 	if (status == STATUS_SUCCESS) { DbgPrint(("CreateDevice 成功")); }
 
+	// 处理权限
+	// 在命令行中添加 /INTEGRITYCHECK 即可解决Ex权限不够的问题
+
 	// 监控
-	Hook监控进程Ex();
+	//Hook监控进程Ex();
+	
+	安装进程内存保护();
 	return STATUS_SUCCESS;
 };
 // 卸载事件
@@ -46,7 +51,9 @@ void DriverUnload(PDRIVER_OBJECT pDriver)
 		DbgPrint("Unload删除了对象");
 	}
 	// 监控
-	unHook监控进程Ex();
+	//unHook监控进程Ex();
+	
+	卸载进程内存保护();
 };
 
 // 创建设备对象

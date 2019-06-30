@@ -23,6 +23,12 @@
     <Filter Include="监控进程Ex">
       <UniqueIdentifier>{62cda036-90f0-41a3-b863-d0f9e3009071}</UniqueIdentifier>
     </Filter>
+    <Filter Include="进程内存保护">
+      <UniqueIdentifier>{e0b511d8-89a8-401a-beb8-6692f98c1d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程信息">
+      <UniqueIdentifier>{1069749f-751d-42e8-ae98-232e18cb7c8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DriverEntry.c">
@@ -34,6 +40,12 @@
     <ClCompile Include="监控进程Ex.c">
       <Filter>监控进程Ex</Filter>
     </ClCompile>
+    <ClCompile Include="进程内存保护.c">
+      <Filter>进程内存保护</Filter>
+    </ClCompile>
+    <ClCompile Include="进程信息.c">
+      <Filter>进程信息</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="监控进程.h">
@@ -41,6 +53,12 @@
     </ClInclude>
     <ClInclude Include="监控进程Ex.h">
       <Filter>监控进程Ex</Filter>
+    </ClInclude>
+    <ClInclude Include="进程内存保护.h">
+      <Filter>进程内存保护</Filter>
+    </ClInclude>
+    <ClInclude Include="进程信息.h">
+      <Filter>进程信息</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

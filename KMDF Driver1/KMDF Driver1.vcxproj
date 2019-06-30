@@ -156,16 +156,23 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>/INTEGRITYCHECK %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DriverEntry.c" />
+    <ClCompile Include="进程信息.c" />
+    <ClCompile Include="进程内存保护.c" />
     <ClCompile Include="监控进程Ex.c" />
     <ClCompile Include="监控进程.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="进程信息.h" />
+    <ClInclude Include="进程内存保护.h" />
     <ClInclude Include="监控进程Ex.h" />
     <ClInclude Include="监控进程.h" />
   </ItemGroup>

@@ -1,6 +1,9 @@
 ﻿  Building 'MyDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
   DriverEntry.c
+  进程信息.c
+  进程内存保护.c
   监控进程Ex.c
+  监控进程.c
   正在生成代码...
   KMDF Driver1.vcxproj -> C:\Users\Administrator\source\repos\KMDF-Driver1\x64\Release\MyDriver.sys
   Done Adding Additional Store

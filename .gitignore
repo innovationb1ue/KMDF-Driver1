@@ -8,3 +8,12 @@
 *.db-wal
 *.log
 *.tlog
+*.obj
+*.user
+*.filters
+*.pdb
+*.log
+*.tlog
+*.pdb
+*.exe
+*.cer

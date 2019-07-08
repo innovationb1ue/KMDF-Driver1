@@ -29,6 +29,15 @@
     <Filter Include="进程信息">
       <UniqueIdentifier>{1069749f-751d-42e8-ae98-232e18cb7c8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PG">
+      <UniqueIdentifier>{a27848d9-c982-46bf-a253-369828b5b5be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="R0注入DLL">
+      <UniqueIdentifier>{f96eb2f2-58ea-4a43-94e1-4dfecd2b4e1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSDT">
+      <UniqueIdentifier>{4dd4c5ac-f190-4ec1-b307-66c9ce162532}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DriverEntry.c">
@@ -46,6 +55,15 @@
     <ClCompile Include="进程信息.c">
       <Filter>进程信息</Filter>
     </ClCompile>
+    <ClCompile Include="Inject111.cpp">
+      <Filter>R0注入DLL</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>PG</Filter>
+    </ClCompile>
+    <ClCompile Include="SSDT.cpp">
+      <Filter>SSDT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="监控进程.h">
@@ -59,6 +77,9 @@
     </ClInclude>
     <ClInclude Include="进程信息.h">
       <Filter>进程信息</Filter>
+    </ClInclude>
+    <ClInclude Include="SSDT.h">
+      <Filter>SSDT</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

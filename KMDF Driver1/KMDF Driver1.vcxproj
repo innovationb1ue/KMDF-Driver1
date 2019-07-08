@@ -165,12 +165,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DriverEntry.c" />
+    <ClCompile Include="Inject111.cpp" />
+    <ClCompile Include="SSDT.cpp" />
+    <ClCompile Include="源.cpp" />
     <ClCompile Include="进程信息.c" />
     <ClCompile Include="进程内存保护.c" />
     <ClCompile Include="监控进程Ex.c" />
     <ClCompile Include="监控进程.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SSDT.h" />
     <ClInclude Include="进程信息.h" />
     <ClInclude Include="进程内存保护.h" />
     <ClInclude Include="监控进程Ex.h" />

@@ -1,19 +1,22 @@
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\vc142.pdb
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\监控进程.obj
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\监控进程ex.obj
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\进程内存保护.obj
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\driverentry.obj
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\进程信息.obj
-c:\users\administrator\source\repos\kmdf-driver1\x64\release\mydriver.sys
-c:\users\administrator\source\repos\kmdf-driver1\x64\release\mydriver.pdb
-c:\users\administrator\source\repos\kmdf-driver1\x64\release\mydriver.cer
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\cl.command.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\cl.read.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\cl.write.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\link.command.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\link.read.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\link.write.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.command.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.read.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.timestamp.1.tlog
-c:\users\administrator\source\repos\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.write.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\vc142.pdb
+e:\kmdf-driver1\kmdf driver1\x64\release\driverentry.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\源.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\ssdt.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\inject111.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\监控进程.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\监控进程ex.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\进程内存保护.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\进程信息.obj
+e:\kmdf-driver1\x64\release\mydriver.sys
+e:\kmdf-driver1\x64\release\mydriver.pdb
+e:\kmdf-driver1\x64\release\mydriver.cer
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\cl.command.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\cl.read.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\cl.write.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\link.command.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\link.read.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\link.write.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.command.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.read.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.timestamp.1.tlog
+e:\kmdf-driver1\kmdf driver1\x64\release\mydriver.tlog\signtool.write.1.tlog

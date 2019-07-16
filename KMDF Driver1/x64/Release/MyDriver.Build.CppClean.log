@@ -1,12 +1,14 @@
 e:\kmdf-driver1\kmdf driver1\x64\release\vc142.pdb
+e:\kmdf-driver1\kmdf driver1\x64\release\hidedriver.obj
 e:\kmdf-driver1\kmdf driver1\x64\release\driverentry.obj
-e:\kmdf-driver1\kmdf driver1\x64\release\源.obj
-e:\kmdf-driver1\kmdf driver1\x64\release\ssdt.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\deviceiocontrol.obj
 e:\kmdf-driver1\kmdf driver1\x64\release\inject111.obj
 e:\kmdf-driver1\kmdf driver1\x64\release\监控进程.obj
 e:\kmdf-driver1\kmdf driver1\x64\release\监控进程ex.obj
 e:\kmdf-driver1\kmdf driver1\x64\release\进程内存保护.obj
 e:\kmdf-driver1\kmdf driver1\x64\release\进程信息.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\virtualallocex.obj
+e:\kmdf-driver1\kmdf driver1\x64\release\mykernelreadprocessmomory.obj
 e:\kmdf-driver1\x64\release\mydriver.sys
 e:\kmdf-driver1\x64\release\mydriver.pdb
 e:\kmdf-driver1\x64\release\mydriver.cer

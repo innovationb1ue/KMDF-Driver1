@@ -17,3 +17,14 @@
 *.pdb
 *.exe
 *.cer
+*.db
+*.filters
+*.tlog
+*.log
+*.obj
+*.pdb
+*.tlog
+*.pdb
+*.pdb
+*.iobj
+*.ipdb

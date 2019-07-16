@@ -35,8 +35,17 @@
     <Filter Include="R0注入DLL">
       <UniqueIdentifier>{f96eb2f2-58ea-4a43-94e1-4dfecd2b4e1f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SSDT">
-      <UniqueIdentifier>{4dd4c5ac-f190-4ec1-b307-66c9ce162532}</UniqueIdentifier>
+    <Filter Include="自写VirtualAllocEx">
+      <UniqueIdentifier>{dd645435-744f-4474-96c9-f683cb040fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DeviceControl">
+      <UniqueIdentifier>{ec4d2f75-410e-485a-b66b-56a41088e872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="跨进程读写">
+      <UniqueIdentifier>{94b3da66-d14b-47c8-a360-02a4599c9018}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="隐藏驱动">
+      <UniqueIdentifier>{9a9324bf-e761-41bc-b40d-1918611fa0e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,11 +67,17 @@
     <ClCompile Include="Inject111.cpp">
       <Filter>R0注入DLL</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
-      <Filter>PG</Filter>
+    <ClCompile Include="VirtualAllocEx.c">
+      <Filter>自写VirtualAllocEx</Filter>
     </ClCompile>
-    <ClCompile Include="SSDT.cpp">
-      <Filter>SSDT</Filter>
+    <ClCompile Include="MyKernelReadProcessMomory.c">
+      <Filter>跨进程读写</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIoControl.c">
+      <Filter>DeviceControl</Filter>
+    </ClCompile>
+    <ClCompile Include="HideDriver.c">
+      <Filter>隐藏驱动</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,8 +93,17 @@
     <ClInclude Include="进程信息.h">
       <Filter>进程信息</Filter>
     </ClInclude>
-    <ClInclude Include="SSDT.h">
-      <Filter>SSDT</Filter>
+    <ClInclude Include="VirtualAllocEx.h">
+      <Filter>自写VirtualAllocEx</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIoControl.h">
+      <Filter>DeviceControl</Filter>
+    </ClInclude>
+    <ClInclude Include="MyKernelReadProcessMemory.h">
+      <Filter>跨进程读写</Filter>
+    </ClInclude>
+    <ClInclude Include="HideDriver.h">
+      <Filter>隐藏驱动</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

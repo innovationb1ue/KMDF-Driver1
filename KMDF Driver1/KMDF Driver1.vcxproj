@@ -149,32 +149,59 @@
     <ClCompile>
       <TreatWarningAsError>false</TreatWarningAsError>
       <WarningLevel>Level3</WarningLevel>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <TreatWarningAsError>false</TreatWarningAsError>
       <WarningLevel>Level3</WarningLevel>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
     <Link>
       <AdditionalOptions>/INTEGRITYCHECK %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DeviceIoControl.c" />
     <ClCompile Include="DriverEntry.c" />
+    <ClCompile Include="HideDriver.c" />
     <ClCompile Include="Inject111.cpp" />
-    <ClCompile Include="SSDT.cpp" />
-    <ClCompile Include="源.cpp" />
+    <ClCompile Include="MyKernelReadProcessMomory.c" />
+    <ClCompile Include="VirtualAllocEx.c" />
     <ClCompile Include="进程信息.c" />
     <ClCompile Include="进程内存保护.c" />
     <ClCompile Include="监控进程Ex.c" />
     <ClCompile Include="监控进程.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SSDT.h" />
+    <ClInclude Include="DeviceIoControl.h" />
+    <ClInclude Include="HideDriver.h" />
+    <ClInclude Include="MyKernelReadProcessMemory.h" />
+    <ClInclude Include="VirtualAllocEx.h" />
     <ClInclude Include="进程信息.h" />
     <ClInclude Include="进程内存保护.h" />
     <ClInclude Include="监控进程Ex.h" />

@@ -1,18 +1,20 @@
 ﻿  Building 'MyDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  DeviceIoControl.c
   DriverEntry.c
+  HideDriver.c
   正在生成代码...
   正在编译...
   Inject111.cpp
-  SSDT.cpp
-  源.cpp
   正在生成代码...
   正在编译...
+  MyKernelReadProcessMomory.c
+  VirtualAllocEx.c
   进程信息.c
   进程内存保护.c
   监控进程Ex.c
   监控进程.c
   正在生成代码...
-E:\KMDF-Driver1\KMDF Driver1\Inject111.cpp(28,75): warning C4390:  “;”: 找到空的受控语句；这是否是有意的?
+E:\KMDF-Driver1\KMDF Driver1\DriverEntry.c(16,32): warning C4030:  第一个形参表比第二个长
   KMDF Driver1.vcxproj -> E:\KMDF-Driver1\x64\Release\MyDriver.sys
   Done Adding Additional Store
   Successfully signed: E:\KMDF-Driver1\x64\Release\MyDriver.sys

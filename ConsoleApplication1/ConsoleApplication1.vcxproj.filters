@@ -19,6 +19,9 @@
     <Filter Include="加载卸载驱动">
       <UniqueIdentifier>{e4bb87af-3832-4f96-9d9d-24a415da5381}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DeviceIO">
+      <UniqueIdentifier>{afef7cc1-2eaa-480d-bbef-839c8eae12ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp">
@@ -27,6 +30,12 @@
     <ClCompile Include="DebugPrint.cpp">
       <Filter>调试信息</Filter>
     </ClCompile>
+    <ClCompile Include="DeviceIo.cpp">
+      <Filter>DeviceIO</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVirtualAllocEx.cpp">
+      <Filter>DeviceIO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugPrint.h">
@@ -34,6 +43,12 @@
     </ClInclude>
     <ClInclude Include="LoadDriver.h">
       <Filter>加载卸载驱动</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIo.h">
+      <Filter>DeviceIO</Filter>
+    </ClInclude>
+    <ClInclude Include="MyVirtualAllocEx.h">
+      <Filter>DeviceIO</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

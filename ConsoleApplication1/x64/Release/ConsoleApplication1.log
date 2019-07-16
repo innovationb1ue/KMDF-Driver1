@@ -1,9 +1,14 @@
 ﻿  ConsoleApplication1.cpp
-E:\KMDF-Driver1\ConsoleApplication1\LoadDriver.h(43,10): warning C4477:  “printf”: 格式字符串“%08X”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“SC_HANDLE”
-  DebugPrint.cpp
-E:\KMDF-Driver1\ConsoleApplication1\LoadDriver.h(43,10): warning C4313:  “printf”: 格式字符串中的“%X”与“SC_HANDLE”类型的参数 1 冲突
+E:\KMDF-Driver1\ConsoleApplication1\LoadDriver.h(42,10): warning C4477:  “printf”: 格式字符串“%08X”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“SC_HANDLE”
+E:\KMDF-Driver1\ConsoleApplication1\LoadDriver.h(42,10): warning C4313:  “printf”: 格式字符串中的“%X”与“SC_HANDLE”类型的参数 1 冲突
+E:\KMDF-Driver1\ConsoleApplication1\ConsoleApplication1.cpp(54,9): warning C4477:  “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“HWND”
+  DeviceIo.cpp
+E:\KMDF-Driver1\ConsoleApplication1\ConsoleApplication1.cpp(54,9): warning C4313:  “printf”: 格式字符串中的“%x”与“HWND”类型的参数 1 冲突
+E:\KMDF-Driver1\ConsoleApplication1\DeviceIo.cpp(54,9): warning C4477:  “printf”: 格式字符串“% x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“PVOID”
+E:\KMDF-Driver1\ConsoleApplication1\DeviceIo.cpp(54,9): warning C4313:  “printf”: 格式字符串中的“%x”与“PVOID”类型的参数 2 冲突
   正在生成代码
-  Previous IPDB not found, fall back to full compilation.
-  All 19 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  4 of 160 functions ( 2.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   ConsoleApplication1.vcxproj -> E:\KMDF-Driver1\x64\Release\ConsoleApplication1.exe

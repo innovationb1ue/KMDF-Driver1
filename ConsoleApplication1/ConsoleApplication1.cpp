@@ -1,14 +1,16 @@
-﻿// ConsoleApplication1.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
-
-#include <iostream>
+﻿#include <iostream>
 #include <Windows.h>
 #include <iostream>
 #include <winioctl.h>
+#include <atlstr.h>
 #include "LoadDriver.h"
+#include "DeviceIo.h"
+
+
 void CreateFileFunc();
 void CloseHandleFunc();
 void DeviceControlFunc();
+void KnRead();
 HANDLE DeviceHandle = NULL;
 int main()
 {
@@ -36,6 +38,9 @@ int main()
 			cout << "调用UnloadDriver()" << endl;
 			UnloadDriver("MyDriver");
 		}
+		if (a == 6) {
+			KnRead();
+		}
 		if (a == 0) {
 			break;
 		}
@@ -43,8 +48,28 @@ int main()
     std::cout << "Hello World!\n";
 }
 
+void KnRead() {
+	// 获取HWND
+	HWND h = FindWindowA(NULL, "D3D Tutorial 03: Matrices");
+	printf("获取到HWND h = %x\n",h);
+	DWORD pid = NULL;
+	// 获取进程pid
+	GetWindowThreadProcessId(h, &pid);
+	printf("获取到HWND PID = %i\n", pid);
+
+	UINT32 buf64 = 0;
+	SIZE_T nSize = 0;
+	// 读取内存
+	nSize = ReadProcessMemoryForPid(pid, (PVOID)0x00401006, &buf64, 8);
+	CStringA cstr;
+	cstr.Format("yjx:驱动Readmemory pid=%d,buf64=%llx,nSize=%d ", pid, buf64, nSize);
+	// 已经成功获取到信息储存在buf64中
+	OutputDebugStringA(cstr);
+	printf(cstr);
+}
+
 void CreateFileFunc() {
-	DeviceHandle = CreateFileW(L"\\??\\MyDriver1",
+	DeviceHandle = CreateFileW(L"\\??\\MyDriver",
 		GENERIC_READ|GENERIC_WRITE, 
 		FILE_SHARE_READ|FILE_SHARE_WRITE,
 		NULL,

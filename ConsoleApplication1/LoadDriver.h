@@ -39,7 +39,6 @@ BOOL  LoadDriver(const char* lpszDriverName, const  char* lpszDriverPath)
 	if (GetLastError() == ERROR_SERVICE_EXISTS) //ERROR_SERVICE_EXISTS 1073 //服务已经存在
 	{
 		hServiceDDK = OpenServiceA(hServiceMgr, lpszDriverName, SERVICE_START);////或者 SERVICE_ALL_ACCESS //
-
 		printf("OpenServiceA hServiceDDK=%08X", hServiceDDK);
 		//SERVICE_CONTROL_CONTINUE
 		hServiceDDK = OpenServiceA(hServiceMgr, lpszDriverName, SERVICE_PAUSE_CONTINUE | SERVICE_QUERY_STATUS);

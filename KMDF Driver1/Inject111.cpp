@@ -25,7 +25,7 @@ VOID LoadImageNotifyRoutine(
 	if (ptr > FullImageName->Buffer && _wcsicmp(ptr, L".exe") == 0)
 	{
 		ptr -= 8;
-		if (ptr > FullImageName->Buffer && _wcsicmp(ptr, L"\\notepad.exe") == 0);
+		if (ptr > FullImageName->Buffer && _wcsicmp(ptr, L"\\notepad.exe") == 0)
 		{
 			pfn_NtQueueApcThread(ZwCurrentThread(),
 				pfn_BaseDispatchApc,
